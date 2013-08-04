@@ -2,10 +2,10 @@
 
 Contributors: StoreYa
 
-Tags: WooCommerce to Facebook, ecommerce, facebook shop, facebook store, woocommerce shop to facebook, woocommerce store to facebook, import shop to facebook WooCommerce plugin
+Tags: WooCommerce to Facebook, facebook, woocommerce, ecommerce, facebook shop, facebook store, woocommerce shop to facebook, woocommerce store to facebook, import shop to facebook WooCommerce plugin
 Requires at least: 3.5.1
 Tested up to: 3.5.2
-Stable tag: 4.3
+Stable tag: 4.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
