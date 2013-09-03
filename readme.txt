@@ -5,7 +5,7 @@ Contributors: StoreYa
 Tags: WooCommerce to Facebook, facebook, woocommerce, ecommerce, facebook shop, facebook store, woocommerce shop to facebook, woocommerce store to facebook, import shop to facebook WooCommerce plugin
 Requires at least: 3.5.1
 Tested up to: 3.5.2
-Stable tag: 4.4
+Stable tag: 4.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,7 +21,7 @@ Our solutions are designed to take full advantage of Facebook's social features,
 == Installation ==
 
 
-1.Download the  zip file and save it locally - storeya-products-feed.zip
+1. Download the  zip file and save it locally - storeya-products-feed.zip
 
 2. Log in to your WordPress blog administration screen.
 
@@ -59,6 +59,7 @@ Visit our pricing page to view the different plans: http://www.storeya.com/publi
 **Q: How can I drive more traffic to my new Facebook store?**
 
 A: So, we gave you an inch, creating your Facebook store, and now you want the whole mile, ha? Well, you have come to the right place! Please log back into your StoreYa.com back office and browse to your marketing page where you can find the following marketing tools which have proven success records:
+
 1. **Group Deals** - pre-define your promotion and have it run as part of your Facebook store.
 
 2. **Scratch & Win a Coupon** - Get to your fans' news feeds where they 'hang out' with a fun game that let them win a coupon of your choice.
@@ -107,5 +108,8 @@ To cancel your account with us, follow these easy steps:
 == Resources ==
 
 [StoreYa support](https://storeya.zendesk.com/home)
+
 [Woocommerce to Facebook](http://www.storeya.com/partners/wp_woocommerce)
+
 [Facebook shop videos](https://vimeo.com/storeya)
+
