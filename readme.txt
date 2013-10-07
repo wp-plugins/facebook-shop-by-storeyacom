@@ -17,29 +17,29 @@ This plugin will import your WooCommerce shop to Facebook in a couple of minutes
 
 StoreYa can also automatically import all of your social networks activities from Twitter, Pinterest, Instagram and YouTube onto Facebook.
 
-AND – to top all that StoreYa will provide you with the following social marketing tools that will boost your sales:
+AND - to top all that StoreYa will provide you with the following social marketing tools that will boost your sales:
 
 - **Group Deal** - a marketing tool enabling you to have your fans attracting their friends to join a specific deal that will only take place if certain amount of users, defined by you, joins it. [Watch this short video](http://vimeo.com/48532142) to see how the Group Deal gained over 1,000 sales and 4,000 new fans in 24 hours to our Scandinavian fashion brand merchant, OnePiece.
 
-- **Scratch & Win** - an innovative marketing tool enabling you to get straight to your fans’ newsfeed where they ‘hang out’ in a fun and incentivizing way. This tool allows your fans to win coupons by playing a game of scratch cards. 
+- **Scratch & Win** - an innovative marketing tool enabling you to get straight to your fans' newsfeed where they 'hang out' in a fun and incentivizing way. This tool allows your fans to win coupons by playing a game of scratch cards. 
 
-- **InstaGallery** - enables you to have your customers tagging your store in their Instagram photos, making them feel a part of the store community while spreading your word to their friends. You can then link each photo to its relevant product, share it, and have it redirecting to your product pages. (See Airwalk’s example, [click on the Tagged us button](http://www.facebook.com/airwalk/app_149696141763776)).
+- **InstaGallery** - enables you to have your customers tagging your store in their Instagram photos, making them feel a part of the store community while spreading your word to their friends. You can then link each photo to its relevant product, share it, and have it redirecting to your product pages. (See Airwalk's example, [click on the Tagged us button](http://www.facebook.com/airwalk/app_149696141763776)).
 
-- [**Coupon Pop**](http://www.storeya.com/public/couponpop) – Boost your website conversion rate and increase your fan base and email lists by popping up special offers to your visitors.
+- [**Coupon Pop**](http://www.storeya.com/public/couponpop) - Boost your website conversion rate and increase your fan base and email lists by popping up special offers to your visitors.
 
 - **Like Box** - Adding a Like Box to your online shop will help you increasing your Facebook fan base.
 
 - [**Fan Gate**](http://blog.storeya.com/2013/04/storeyas-marketing-tool-fan-gate/) - Using the Fan Gate tool will help you increasing your fan base by enabling you to offer coupons and discounts in return to liking your page.
 
-- [**Twitter Tab**](http://blog.storeya.com/2013/08/integrate-twitter-account-facebook-shop/) – Display a feed of your tweets within a tab on your Facebook page.
+- [**Twitter Tab**](http://blog.storeya.com/2013/08/integrate-twitter-account-facebook-shop/) - Display a feed of your tweets within a tab on your Facebook page.
 
-- [**Pinterest Tab**](http://blog.storeya.com/2013/08/integrate-pinterest-account-facebook-shop/) – Display your Pinterest boards on Facebook – Your fans would love that.
+- [**Pinterest Tab**](http://blog.storeya.com/2013/08/integrate-pinterest-account-facebook-shop/) - Display your Pinterest boards on Facebook - Your fans would love that.
 
-- [**YouTube Tab**](http://blog.storeya.com/2013/09/create-youtube-tab-facebook-fan-page/) – Display a Youtube channel on your Facebook page, keeping your fans engaged with your page.
+- [**YouTube Tab**](http://blog.storeya.com/2013/09/create-youtube-tab-facebook-fan-page/) - Display a Youtube channel on your Facebook page, keeping your fans engaged with your page.
 
-- [**Instagram Tab**](http://blog.storeya.com/2013/08/integrate-instagram-profile-facebook-fan-page/) – Display an Instagram tab on your Facebook page, and add a great added value to your fans.
+- [**Instagram Tab**](http://blog.storeya.com/2013/08/integrate-instagram-profile-facebook-fan-page/) - Display an Instagram tab on your Facebook page, and add a great added value to your fans.
 
-- **Sweepstakes** – Collect emails & fans by offering rewards using the most social giveaway app. (To be released shortly).
+- **Sweepstakes** - Collect emails & fans by offering rewards using the most social giveaway app. (To be released shortly).
 
 
 == Installation ==
