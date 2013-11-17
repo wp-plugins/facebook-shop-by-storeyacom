@@ -2,6 +2,8 @@
 
 class woocommerce_storeya_admin {
 
+
+
 	private $settings = array();
 	private $product_fields = array ();
 
@@ -12,9 +14,12 @@ class woocommerce_storeya_admin {
 		$this->settings = get_option ( 'woocommerce_storeya_config' );
 		
 		$this->product_fields = array (										
+									
+									
 									'disable_feed' => array (
 										'desc' => __( 'Disable feed', 'woocommerce_storeya' ),
 										'full_desc' => __ ( '', 'woocommerce_storeya' ) ),
+									
 		);
 
 		add_action ( 'init', array ( &$this, 'init' ) );		
@@ -126,11 +131,13 @@ class woocommerce_storeya_admin {
 		<?php
 	}
 
+
+
 	
 	function save_settings() {
 
 		
-		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-settings' ) ) die( __( 'Save action failed. Please refresh the page and retry.', 'woothemes' ) );
+		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-settings' ) ) die( __( 'Action failed. Please refresh the page and retry.', 'woothemes' ) );
 
 		if ( ! $this->settings ) {
 			$this->settings = array();
@@ -154,8 +161,12 @@ class woocommerce_storeya_admin {
 
 	}
 
+
 }
 
+
 $woocommerce_storeya_admin = new woocommerce_storeya_admin();
+
+
 
 ?>

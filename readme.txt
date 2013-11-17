@@ -3,9 +3,9 @@
 Contributors: StoreYa
 
 Tags: Facebook, ecommerce, Facebook store, Facebook shop, import, Viral marketing, woocommerce, woo-commerce, wp-commerce, wp, Rewards, Facebook marketing, Social Marketing, Online Sales, Marketing tools, Social commerce, storeya, Create a coupon, Create a discount, Promotional tool, engagement, Online  marketing, Email Marketing, Twitter, G+, google, google plus, Instagram, Pinterest, LinkedIn, likes, get likes, buy likes, fans, add fans, buy fans, Incentive app, Social campaigns, ads, seo, ppc, wordpress, share, blog, plugin, sharing, network, tumblr
-Requires at least: 3.5.1
-Tested up to: 3.5.2
-Stable tag: 4.5.2
+Requires at least: 3.3
+Tested up to: 3.6.1
+Stable tag: 4.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,13 +45,13 @@ AND - to top all that StoreYa will provide you with the following social marketi
 == Installation ==
 
 
-1. Download the  zip file and save it locally - storeya-products-feed.zip
+1. Download the  zip file and save it locally - facebook-shop-by-storeyacom.zip
 
 2. Log in to your WordPress blog administration screen.
 
 3. Click on 'Plugins' and then on 'Add New' (left menu)
 
-4. Click on the 'Upload' link, choose 'storeya-products-feed.zip' file and click on the 'Install' now button.
+4. Click on the 'Upload' link, choose 'facebook-shop-by-storeyacom.zip' file and click on the 'Install' now button.
 
 5. Click on 'Activate Plugin' link
 

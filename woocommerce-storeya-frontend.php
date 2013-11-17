@@ -19,9 +19,9 @@ class woocommerce_storeya_frontend {
 
 		$this->settings = get_option ( 'woocommerce_storeya_config' );
 		
-		if ( isset ( $this->settings['product_fields']['disable_feed'] ) ) {
-			return;
-		}
+		//if ( isset ( $this->settings['product_fields']['disable_feed'] ) ) {
+		//	return;
+		//}
 
 		add_action ( 'template_redirect', array ( &$this, 'render_product_feed' ), 15 );
 
@@ -80,11 +80,17 @@ class woocommerce_storeya_frontend {
 		echo "  <channel>\n";
 		echo "    <title><![CDATA[".get_option('blogname')." Products]]></title>\n";
 		echo "    <link>".$siteurl."</link>\n";
-		echo "    <description>StoreYa RSS feed 2.0</description>\n";
+		echo "    <description>StoreYa RSS feed 2.2</description>\n";
 		
 		echo "    <atom:link href='$self' rel='self' type='application/rss+xml' />\n";
 
-		
+		if ( isset ( $this->settings['product_fields']['disable_feed'] ) ) {
+			echo "    <message>Feed was disabled.</message>\n";
+			echo "  </channel>\n\r";
+			echo "</rss>";
+
+		exit();
+		}
 
 		$google_checkout_note = FALSE;
 
@@ -135,22 +141,23 @@ class woocommerce_storeya_frontend {
 	            if ( count ( $woocommerce_product->children ) ) {
 
 				    $children = $woocommerce_product->children;
+					if ( is_array($children) ) {
 
-	                foreach ( $children as $child_product ) {
-	    
-                        if ( $US_feed ) {
-	                        $child_price = $child_product->product->get_price_excluding_tax();
-                        } else {
-	                        $child_price = $child_product->product->get_price();
-                        }
-	    
-					    if (($price == 0) && ($child_price > 0)) {
-						    $price = $child_price;
-					    } else if ( ($child_price > 0) && ($child_price < $price) ) {
-							    $price = $child_price;
-					    }
-
-				    }
+						foreach ( $children as $child_product ) {
+			
+							if ( $US_feed ) {
+								$child_price = $child_product->product->get_price_excluding_tax();
+							} else {
+								$child_price = $child_product->product->get_price();
+							}
+			
+							if (($price == 0) && ($child_price > 0)) {
+								$price = $child_price;
+							} else if ( ($child_price > 0) && ($child_price < $price) ) {
+									$price = $child_price;
+							}
+						}
+					}
 
 	            }
 
@@ -175,6 +182,8 @@ class woocommerce_storeya_frontend {
 				echo "      <link>$purchase_link</link>\n\r";
 				
 				echo "      <description><![CDATA[".substr(apply_filters ('the_content', get_the_content()),0,10000)."]]></description>\n\r";
+				echo" <description_short><![CDATA[".get_post_field( post_excerpt, $post->ID )."]]></description_short>\n\r";
+				
 				echo "      <guid>woocommerce_storeya_".$post->ID."</guid>\n\r";
 
 				$image_link = $this->get_the_post_thumbnail_src ( $post->ID, 'shop_large' );

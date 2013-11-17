@@ -2,9 +2,9 @@
 /*
 Plugin Name: Storeya Feed
 Plugin URI: http://www.storeya.com/
-Description: StoreYa extension that allows you to get your products feed to the Facebook Shop
+Description: StoreYa extension that allows you to get your products feed.
 Author: StoreYa 
-Version: 2.0
+Version: 2.2
 Author URI: http://www.storeya.com/
 License: 
 */
