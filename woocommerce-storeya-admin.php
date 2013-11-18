@@ -22,19 +22,30 @@ class woocommerce_storeya_admin {
 									
 		);
 
-		add_action ( 'init', array ( &$this, 'init' ) );		
+		add_action ( 'init', array ( &$this, 'init' ) );
+		
+			
 
 		add_filter ( 'woocommerce_settings_tabs_array', array ( &$this, 'add_woocommerce_settings_tab' ) );
+		
+		
+		
 		add_action ( 'woocommerce_settings_tabs_storeya', array ( &$this, 'config_page' ) );
-		add_action ( 'woocommerce_update_options_storeya', array ( &$this, 'save_settings' ) );
+		add_action ( 'woocommerce_update_options_storeya', array ( &$this, 'save_settings' ) );	
+		
+		
+		add_filter('plugin_action_links', array(&$this, 'woocommerce_storeya_plugin_actions'), 10, 2);
 
 	}
+	
+
 
 
 	function init() {		
 	
 
-		$this->product_fields = apply_filters ( 'woocommerce_wpf_product_fields', $this->product_fields );	
+		$this->product_fields = apply_filters ( 'woocommerce_wpf_product_fields', $this->product_fields );
+		
 
 	}
 
@@ -44,6 +55,7 @@ class woocommerce_storeya_admin {
 		return $tabs;
 
 	}
+
 
 
 	function config_page() {
@@ -160,6 +172,23 @@ class woocommerce_storeya_admin {
 		echo '<div id="message" class="updated"><p>'.__('Settings saved.').'</p></div>';
 
 	}
+	
+function woocommerce_storeya_plugin_actions($links, $file)
+{ 
+    static $this_plugin;
+ 
+    if (!$this_plugin) {
+        $this_plugin = plugin_basename(__FILE__);
+        
+    } 
+
+    if ($file=="facebook-shop-by-storeyacom/woocommerce-storeya.php" && $this_plugin=="facebook-shop-by-storeyacom/woocommerce-storeya-admin.php") {        
+        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=woocommerce_settings&tab=storeya">Settings</a>';    
+        array_unshift($links, $settings_link);
+    }
+    
+    return $links;
+}
 
 
 }

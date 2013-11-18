@@ -80,7 +80,7 @@ class woocommerce_storeya_frontend {
 		echo "  <channel>\n";
 		echo "    <title><![CDATA[".get_option('blogname')." Products]]></title>\n";
 		echo "    <link>".$siteurl."</link>\n";
-		echo "    <description>StoreYa RSS feed 2.2</description>\n";
+		echo "    <description>StoreYa RSS feed 2.3</description>\n";
 		
 		echo "    <atom:link href='$self' rel='self' type='application/rss+xml' />\n";
 
