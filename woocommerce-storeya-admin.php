@@ -1,5 +1,12 @@
 <?php
 
+
+$plugurldir = get_option('siteurl') . '/' . PLUGINDIR . '/facebook-shop-by-storeyacom/';
+$ws_domain = 'FacebookShopByStoreya';
+load_plugin_textdomain($ws_domain, 'wp-content/plugins/facebook-shop-by-storeyacom');
+
+
+
 class woocommerce_storeya_admin {
 
 
@@ -46,6 +53,17 @@ class woocommerce_storeya_admin {
 
 		$this->product_fields = apply_filters ( 'woocommerce_wpf_product_fields', $this->product_fields );
 		
+		
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		
+		}
+		else
+		{
+		if (function_exists('current_user_can') && current_user_can('manage_options'))
+		{               
+                  add_action ( 'admin_menu', array ( &$this, 'ws_add_settings_page' ) );
+                }
+                }
 
 	}
 
@@ -66,6 +84,7 @@ class woocommerce_storeya_admin {
 
 ?>
         <h3><?php _e ( 'Congratulations!', 'woocommerce_storeya' ); ?></h3>
+        <img src='http://www.storeya.com/Widgets/Admin?p=StoreYaPluginForWooCommerce'/>
 		
 		<p><?php _e ( "You have successfully generated a Products Feed for your store!", 'woocommerce_storeya'); ?></p>
         </p>		
@@ -183,7 +202,16 @@ function woocommerce_storeya_plugin_actions($links, $file)
     } 
 
     if ($file=="facebook-shop-by-storeyacom/woocommerce-storeya.php" && $this_plugin=="facebook-shop-by-storeyacom/woocommerce-storeya-admin.php") {        
+        
+        if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
         $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=woocommerce_settings&tab=storeya">Settings</a>';    
+        }
+        else
+        {
+        $settings_link = '<a href="' . admin_url('options-general.php?page=facebook-shop-by-storeyacom') . '">' . __('Settings', $ws_domain) . '</a>';
+        }
+        
+        
         array_unshift($links, $settings_link);
     }
     
@@ -191,6 +219,45 @@ function woocommerce_storeya_plugin_actions($links, $file)
 }
 
 
+
+
+
+
+    function ws_add_settings_page()
+    {
+        function ws_settings_page()
+        {
+            global $ws_domain, $plugurldir;
+?>
+      <div class="wrap">
+        <?php
+            screen_icon();
+?>
+        <h2><?php
+            _e('WooCommerce shop to Facebook ', $ws_domain);
+?> </h2>
+        <div class="metabox-holder meta-box-sortables ui-sortable pointer">
+          <div class="postbox" style="float:left;width:30em;margin-right:20px">
+            <h3 class="hndle"><span><?php
+            _e('WooCommerce shop to Facebook', $ws_domain);
+?></span></h3>
+            <div class="inside" style="padding: 0 10px">
+            <br/>
+		<p>This plugin supports only WooCommerce platform.</p>
+		<p>Please state the shopping cart plugin you are currently using and we'll add it to our roadmap. 
+		<a href="http://www.storeya.com/public/contactus" target=_blank title="StoreYa.com">Contact us</a></p>
+		<img src="http://www.storeya.com/Widgets/Admin?p=StoreYaPluginForWooCommerce_withoutWooCommerce"/>
+            <br/>
+                  </div>
+                 </div>
+
+                </div>
+              </div>
+              <?php
+        }
+                
+        add_submenu_page('options-general.php', __('WooCommerce shop to Facebook', $ws_domain), __('WooCommerce shop to Facebook', $ws_domain), 'manage_options', 'facebook-shop-by-storeyacom', 'ws_settings_page');
+    }
 }
 
 

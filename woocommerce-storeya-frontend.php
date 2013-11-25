@@ -68,19 +68,13 @@ class woocommerce_storeya_frontend {
 		$self = home_url("/index.php?action=woocommerce_storeya");
 
 		header("Content-Type: application/xml; charset=UTF-8");
-        if ( isset ( $_REQUEST['feeddownload'] ) ) {
-		    header('Content-Disposition: attachment; filename="E-Commerce_Product_List.xml"');
-        } else {
-		    header('Content-Disposition: inline; filename="E-Commerce_Product_List.xml"');
-        }
-
         
 		echo "<?xml version='1.0' encoding='UTF-8' ?>\n\r";
 		echo "<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom' xmlns:g='http://base.google.com/ns/1.0'>\n";
 		echo "  <channel>\n";
 		echo "    <title><![CDATA[".get_option('blogname')." Products]]></title>\n";
 		echo "    <link>".$siteurl."</link>\n";
-		echo "    <description>StoreYa RSS feed 2.3</description>\n";
+		echo "    <description>StoreYa RSS feed 2.4</description>\n";
 		
 		echo "    <atom:link href='$self' rel='self' type='application/rss+xml' />\n";
 
