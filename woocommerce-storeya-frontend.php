@@ -8,13 +8,8 @@
 
 class woocommerce_storeya_frontend {
 
-
-
 	private $settings = array();
 
-
-
-	
 	function __construct() {
 
 		$this->settings = get_option ( 'woocommerce_storeya_config' );
@@ -48,16 +43,10 @@ class woocommerce_storeya_frontend {
 		return $src;
 	}
 
-
-
-
 	
 	function render_product_feed() {
-	
-
 
 		global $wpdb, $wp_query, $post;
-
 		
 		define('DONOTCACHEPAGE', TRUE);
         
@@ -86,8 +75,6 @@ class woocommerce_storeya_frontend {
 		exit();
 		}
 
-		$google_checkout_note = FALSE;
-
         $currency = get_option ( 'woocommerce_currency' );
         $weight_units = get_option ( 'woocommerce_weight_unit' );
         $base_country = get_option ( 'woocommerce_base_country' );
@@ -114,11 +101,10 @@ class woocommerce_storeya_frontend {
 				setup_postdata($post);
 
 	           	if (function_exists('get_product')) {
-       $woocommerce_product = get_product ( $post->ID );
-
-          } else {
-    $woocommerce_product = new woocommerce_product ( $post->ID );
-}
+					$woocommerce_product = get_product ( $post->ID );
+				} else {
+					$woocommerce_product = new woocommerce_product ( $post->ID );
+				}
 
 	            if ( $woocommerce_product->visibility == 'hidden' )
 	            	continue;
@@ -160,18 +146,9 @@ class woocommerce_storeya_frontend {
 
                 $price = number_format ( $price, 2, '.', '' );
 
-            
-                // $tmp_product_data = $woocommerce_product->product_custom_fields['_woocommerce_storeya_data'][0];
-                // $tmp_product_data = unserialize ( $tmp_product_data );
-                // if ( isset ( $tmp_product_data['exclude_product'] ) )
-                	// continue;
-
 				$purchase_link = get_permalink($post->ID);
 
 				echo "    <item>\n\r";
-				if ($google_checkout_note) {
-					echo "      <g:payment_notes>Google Checkout</g:payment_notes>\n\r";
-				}
 				echo "      <title><![CDATA[".get_the_title()."]]></title>\n\r";
 				echo "      <link>$purchase_link</link>\n\r";
 				

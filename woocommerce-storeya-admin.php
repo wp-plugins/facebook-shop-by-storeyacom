@@ -10,23 +10,16 @@ load_plugin_textdomain($ws_domain, 'wp-content/plugins/facebook-shop-by-storeyac
 class woocommerce_storeya_admin {
 
 
-
 	private $settings = array();
 	private $product_fields = array ();
-
-
 
 	function __construct() {
 
 		$this->settings = get_option ( 'woocommerce_storeya_config' );
-		
 		$this->product_fields = array (										
-									
-									
 									'disable_feed' => array (
 										'desc' => __( 'Disable feed', 'woocommerce_storeya' ),
 										'full_desc' => __ ( '', 'woocommerce_storeya' ) ),
-									
 		);
 
 		add_action ( 'init', array ( &$this, 'init' ) );
@@ -42,15 +35,11 @@ class woocommerce_storeya_admin {
 		
 		
 		add_filter('plugin_action_links', array(&$this, 'woocommerce_storeya_plugin_actions'), 10, 2);
-
 	}
 	
 
 
-
 	function init() {		
-	
-
 		$this->product_fields = apply_filters ( 'woocommerce_wpf_product_fields', $this->product_fields );
 		
 		
@@ -64,14 +53,11 @@ class woocommerce_storeya_admin {
                   add_action ( 'admin_menu', array ( &$this, 'ws_add_settings_page' ) );
                 }
                 }
-
 	}
 
 	function add_woocommerce_settings_tab( $tabs ) {
-
 		$tabs['storeya'] = __('StoreYa Facebook Store', 'woocommerce_storeya');
 		return $tabs;
-
 	}
 
 
