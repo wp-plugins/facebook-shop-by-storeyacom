@@ -1,6 +1,5 @@
 <?php
 
-
 $plugurldir = get_option('siteurl') . '/' . PLUGINDIR . '/facebook-shop-by-storeyacom/';
 $ws_domain = 'FacebookShopByStoreya';
 load_plugin_textdomain($ws_domain, 'wp-content/plugins/facebook-shop-by-storeyacom');
@@ -23,44 +22,36 @@ class woocommerce_storeya_admin {
 		);
 
 		add_action ( 'init', array ( &$this, 'init' ) );
-		
-			
 
 		add_filter ( 'woocommerce_settings_tabs_array', array ( &$this, 'add_woocommerce_settings_tab' ) );
-		
-		
 		
 		add_action ( 'woocommerce_settings_tabs_storeya', array ( &$this, 'config_page' ) );
 		add_action ( 'woocommerce_update_options_storeya', array ( &$this, 'save_settings' ) );	
 		
-		
 		add_filter('plugin_action_links', array(&$this, 'woocommerce_storeya_plugin_actions'), 10, 2);
 	}
 	
-
-
 	function init() {		
 		$this->product_fields = apply_filters ( 'woocommerce_wpf_product_fields', $this->product_fields );
 		
 		
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) 
+		{
 		
 		}
 		else
 		{
-		if (function_exists('current_user_can') && current_user_can('manage_options'))
-		{               
+			if (function_exists('current_user_can') && current_user_can('manage_options'))
+			{               
                   add_action ( 'admin_menu', array ( &$this, 'ws_add_settings_page' ) );
-                }
-                }
+            }
+		}
 	}
 
 	function add_woocommerce_settings_tab( $tabs ) {
 		$tabs['storeya'] = __('StoreYa Facebook Store', 'woocommerce_storeya');
 		return $tabs;
 	}
-
-
 
 	function config_page() {
 
@@ -103,8 +94,6 @@ class woocommerce_storeya_admin {
 				 echo 'checked="checked"';         
 				 
 			}	
-			 
-			
 			echo '><label for="woocommerce_storeya_config[product_fields]['.$key.']">'.esc_html ( $info['full_desc'] ) . '</label>';
 			if ( isset ( $this->product_fields[$key]['can_default'] ) ) {
 
@@ -148,12 +137,8 @@ class woocommerce_storeya_admin {
 		<?php
 	}
 
-
-
-	
 	function save_settings() {
 
-		
 		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-settings' ) ) die( __( 'Action failed. Please refresh the page and retry.', 'woothemes' ) );
 
 		if ( ! $this->settings ) {
@@ -184,7 +169,6 @@ function woocommerce_storeya_plugin_actions($links, $file)
  
     if (!$this_plugin) {
         $this_plugin = plugin_basename(__FILE__);
-        
     } 
 
     if ($file=="facebook-shop-by-storeyacom/woocommerce-storeya.php" && $this_plugin=="facebook-shop-by-storeyacom/woocommerce-storeya-admin.php") {        
@@ -221,7 +205,7 @@ function woocommerce_storeya_plugin_actions($links, $file)
 ?>
         <h2><?php
             _e('WooCommerce shop to Facebook ', $ws_domain);
-?> </h2>
+?> 		</h2>
         <div class="metabox-holder meta-box-sortables ui-sortable pointer">
           <div class="postbox" style="float:left;width:30em;margin-right:20px">
             <h3 class="hndle"><span><?php
@@ -248,7 +232,5 @@ function woocommerce_storeya_plugin_actions($links, $file)
 
 
 $woocommerce_storeya_admin = new woocommerce_storeya_admin();
-
-
 
 ?>
