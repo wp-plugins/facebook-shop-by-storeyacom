@@ -174,7 +174,7 @@ function woocommerce_storeya_plugin_actions($links, $file)
     if ($file=="facebook-shop-by-storeyacom/woocommerce-storeya.php" && $this_plugin=="facebook-shop-by-storeyacom/woocommerce-storeya-admin.php") {        
         
         if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=woocommerce_settings&tab=storeya">Settings</a>';    
+        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=wc-settings&tab=storeya">Settings</a>';    
         }
         else
         {
