@@ -17,8 +17,7 @@ class woocommerce_storeya_admin {
 		$this->settings = get_option ( 'woocommerce_storeya_config' );
 		$this->product_fields = array (										
 									'disable_feed' => array (
-										'desc' => __( 'Disable feed', 'woocommerce_storeya' ),
-										'full_desc' => __ ( '', 'woocommerce_storeya' ) ),
+										'desc' => __( 'Disable feed', 'woocommerce_storeya' ) ),
 		);
 
 		add_action ( 'init', array ( &$this, 'init' ) );
@@ -93,34 +92,8 @@ class woocommerce_storeya_admin {
 			if ( isset ( $this->settings['product_fields'][$key] ) ) {		 
 				 echo 'checked="checked"';         
 				 
-			}	
-			echo '><label for="woocommerce_storeya_config[product_fields]['.$key.']">'.esc_html ( $info['full_desc'] ) . '</label>';
-			if ( isset ( $this->product_fields[$key]['can_default'] ) ) {
-
-				echo '<div class="woocommerce_storeya_config_'.$key.'"';
-				if ( ! isset ( $this->settings['product_fields'][$key] ) ) {
-					echo ' style="display:none;"';
-
-				}
-				echo '>'.__( 'Store default: ', 'woocommerce_storeya' );
-				if ( ! isset ( $this->{"product_fields"}[$key]['callback'] ) || ! is_callable( $this->{"product_fields"}[$key]['callback'] ) ) {
-
-					echo '<input type="textbox" name="_woocommerce_storeya_data['.$key.']" ';
-					if ( !empty ( $this->settings['product_defaults'][$key] ) )
-						echo ' value="'.esc_attr($this->settings['product_defaults'][$key]).'"';
-					echo '>';
-
-				} else {
-
-					if ( isset ( $this->settings['product_defaults'][$key] ) ) {
-						call_user_func( $this->{"product_fields"}[$key]['callback'], $key, $this->settings['product_defaults'][$key] );
-					} else {
-						call_user_func( $this->{"product_fields"}[$key]['callback'], $key );
-					}
-
-				}
-				echo "</div></div></td>";
-			}
+			}		
+			
 			echo '</tr>';
 		}
 ?>
@@ -146,8 +119,11 @@ class woocommerce_storeya_admin {
 			add_option ( 'woocommerce_storeya_config', $this->settings, '', 'yes' );
 		}
 
-		foreach ( $_POST['_woocommerce_storeya_data'] as $key => $value ) {
-			$_POST['_woocommerce_storeya_data'][$key] = stripslashes($value);
+		
+		if ( isset ( $_POST['_woocommerce_storeya_data'] ) ) {
+			foreach ( $_POST['_woocommerce_storeya_data'] as $key => $value ) {
+				$_POST['_woocommerce_storeya_data'][$key] = stripslashes($value);
+			}
 		}
 
 		
