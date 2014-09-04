@@ -2,7 +2,7 @@
 
 $plugurldir = get_option('siteurl') . '/' . PLUGINDIR . '/facebook-shop-by-storeyacom/';
 $ws_domain = 'FacebookShopByStoreya';
-load_plugin_textdomain($ws_domain, 'wp-content/plugins/facebook-shop-by-storeyacom');
+load_plugin_textdomain($ws_domain, false, dirname( plugin_basename( __FILE__ ) ) . '/facebook-shop-by-storeyacom/');
 
 
 
