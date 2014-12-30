@@ -134,3 +134,4 @@ To cancel your account with us, follow these easy steps:
 [Woocommerce to Facebook](http://www.storeya.com/partners/wp_woocommerce)
 
 [Facebook shop videos](https://vimeo.com/storeya)  
+  
