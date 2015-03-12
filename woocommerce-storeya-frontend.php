@@ -125,16 +125,19 @@ class woocommerce_storeya_frontend {
 
 						foreach ( $children as $child_product ) {
 			
-							if ( $US_feed ) {
-								$child_price = $child_product->product->get_price_excluding_tax();
-							} else {
-								$child_price = $child_product->product->get_price();
-							}
-			
-							if (($price == 0) && ($child_price > 0)) {
-								$price = $child_price;
-							} else if ( ($child_price > 0) && ($child_price < $price) ) {
+							if(isset($child_product->product))
+							{							
+								if ( $US_feed ) {
+									$child_price = $child_product->product->get_price_excluding_tax();
+								} else {
+									$child_price = $child_product->product->get_price();
+								}
+				
+								if (($price == 0) && ($child_price > 0)) {
 									$price = $child_price;
+								} else if ( ($child_price > 0) && ($child_price < $price) ) {
+										$price = $child_price;
+								}
 							}
 						}
 					}
