@@ -5,7 +5,7 @@ Contributors: StoreYa
 Tags: Facebook, ecommerce, Facebook store, Facebook shop, import, Viral marketing, woocommerce, woo-commerce, wp-commerce, wp, Rewards, Facebook marketing, Social Marketing, Online Sales, Marketing tools, Social commerce, storeya, Create a coupon, Create a discount, Promotional tool, engagement, Online  marketing, Email Marketing, Twitter, G+, google, google plus, Instagram, Pinterest, LinkedIn, likes, get likes, buy likes, fans, add fans, buy fans, Incentive app, Social campaigns, ads, seo, ppc, wordpress, share, blog, plugin, sharing, network, tumblr
 Requires at least: 3.3
 Tested up to: 4.2
-Stable tag: 5.6
+Stable tag: 5.7
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,6 @@ AND - to top all that StoreYa will provide you with the following social marketi
 - **InstaGallery** - enables you to have your customers tagging your store in their Instagram photos, making them feel a part of the store community while spreading your word to their friends. You can then link each photo to its relevant product, share it, and have it redirecting to your product pages.
 
 - **Like Box** - Adding a Like Box to your online shop will help you increasing your Facebook fan base.
-
-- [**Fan Gate**](http://blog.storeya.com/2013/04/storeyas-marketing-tool-fan-gate/) - Using the Fan Gate tool will help you increasing your fan base by enabling you to offer coupons and discounts in return to liking your page.
 
 - [**Twitter Tab**](http://blog.storeya.com/2013/08/integrate-twitter-account-facebook-shop/) - Display a feed of your tweets within a tab on your Facebook page.
 
